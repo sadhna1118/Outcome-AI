@@ -1,0 +1,20 @@
+{
+  "name": "outcome-ai",
+  "version": "1.0.0",
+  "description": "OutcomeAI - Autonomous AI Teammate for Sales & Customer Service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "autonomous-ai",
+    "agentic-ai",
+    "sales-ai",
+    "customer-service",
+    "rag",
+    "decision-intelligence"
+  ],
+  "author": "OutcomeAI Team",
+  "license": "MIT"
+}

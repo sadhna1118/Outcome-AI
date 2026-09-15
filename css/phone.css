@@ -1,0 +1,191 @@
+/* Voice Calling & Telephony Simulator Styling */
+.phone-viewport {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.phone-left-panel {
+  width: 360px;
+  min-width: 360px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 16px;
+}
+
+.phone-dialer-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.caller-avatar-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+}
+
+.caller-avatar-circle.in-call::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-emerald);
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+.call-timer-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.phone-center-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+/* Oscilloscope Audio Waveform Canvas */
+.waveform-container {
+  background: #02040a;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.waveform-canvas {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+/* Live Call Transcript Stream */
+.transcript-bubble-row {
+  display: flex;
+  gap: 12px;
+  animation: slideUpFade 0.25s ease-out;
+}
+
+.transcript-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.transcript-tag.customer { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+.transcript-tag.ai { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+/* Multi-Agent Swarm Collaboration Styling */
+.swarm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.agent-node-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.agent-node-card.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.agent-node-card.speaking {
+  border-color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.12);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.swarm-chat-log {
+  background: #050811;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  height: 340px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swarm-message {
+  display: flex;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #6366f1;
+}
+
+/* Global Operations Map Canvas */
+.ops-map-wrapper {
+  background: #030611;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.map-pin {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.map-pin:hover {
+  transform: scale(1.3);
+}

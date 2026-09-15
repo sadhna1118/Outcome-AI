@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutcomeAI 3.0 Enterprise | Autonomous AI Teammate Platform</title>
+  <meta name="description" content="OutcomeAI 3.0 is a state-of-the-art enterprise autonomous AI teammate platform featuring voice calling, multi-agent swarm orchestration, live ERP/CRM execution, and global operations telemetry.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/chat.css">
+  <link rel="stylesheet" href="css/phone.css">
+  <link rel="stylesheet" href="css/workflow.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <!-- Live Telemetry Ticker Bar -->
+  <div class="live-ticker-bar">
+    <div class="ticker-content">
+      <div class="ticker-item">
+        <span class="dot-live" style="color: var(--accent-emerald);"></span>
+        <span>AI Engine: <strong class="ticker-highlight">GPT-5 / LangGraph / CrewAI Active</strong></span>
+      </div>
+      <div class="ticker-item">
+        <span>⚡ Autonomous Actions Today: <strong class="ticker-highlight">4,281 Executed</strong></span>
+      </div>
+      <div class="ticker-item">
+        <span>⏱️ Avg Action Latency: <strong class="ticker-highlight">0.38s</strong></span>
+      </div>
+      <div class="ticker-item">
+        <span>🛡️ SLA Compliance: <strong class="ticker-highlight">99.98%</strong></span>
+      </div>
+      <div class="ticker-item">
+        <span>📞 Telephony: <strong class="ticker-highlight">Twilio WebRTC HD Live</strong></span>
+      </div>
+      <div class="ticker-item">
+        <span>🔌 Connected Systems: <strong class="ticker-highlight">Salesforce, Zendesk, Stripe, SAP ERP</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-container" style="height: calc(100vh - 28px);">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <div class="brand-logo-icon">⚡</div>
+          <div class="brand-text-container">
+            <div class="brand-title">
+              OutcomeAI <span class="brand-badge">3.0</span>
+            </div>
+            <div class="brand-subtitle">Autonomous AI Teammate</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Autonomous Channels</div>
+        <a href="#chat" class="nav-item active" data-view="chat" id="nav-chat">
+          <span class="nav-icon">💬</span>
+          <span>Omnichannel Agent</span>
+          <span class="nav-item-badge badge-live">Live</span>
+        </a>
+        <a href="#phone" class="nav-item" data-view="phone" id="nav-phone">
+          <span class="nav-icon">📞</span>
+          <span>Voice Calling Agent</span>
+          <span class="nav-item-badge badge-pulse" style="background: rgba(16,185,129,0.2); color: #34d399; border-color: rgba(16,185,129,0.4);">VOICE</span>
+        </a>
+        <a href="#proactive" class="nav-item" data-view="proactive" id="nav-proactive">
+          <span class="nav-icon">🔮</span>
+          <span>Proactive Action Engine</span>
+          <span class="nav-item-badge badge-live">AUTO</span>
+        </a>
+        <a href="#chaos" class="nav-item" data-view="chaos" id="nav-chaos">
+          <span class="nav-icon">🎮</span>
+          <span>Chaos / Stress Arena</span>
+          <span class="nav-item-badge badge-pulse" style="background: rgba(239,68,68,0.2); color: #f87171; border-color: rgba(239,68,68,0.4);">100 RPS</span>
+        </a>
+        <a href="#battle" class="nav-item" data-view="battle" id="nav-battle">
+          <span class="nav-icon">⚔️</span>
+          <span>Battle Arena (VS Bot)</span>
+          <span class="nav-item-badge badge-pulse" style="background: rgba(236,72,153,0.2); color: #f472b6; border-color: rgba(236,72,153,0.4);">HOT</span>
+        </a>
+
+        <div class="nav-section-title" style="margin-top: 6px;">Multi-Agent Orchestration</div>
+        <a href="#swarm" class="nav-item" data-view="swarm" id="nav-swarm">
+          <span class="nav-icon">🤖</span>
+          <span>Multi-Agent Swarm</span>
+        </a>
+        <a href="#workflow" class="nav-item" data-view="workflow" id="nav-workflow">
+          <span class="nav-icon">🔄</span>
+          <span>Workflow Studio (DAG)</span>
+        </a>
+        <a href="#hitl" class="nav-item" data-view="hitl" id="nav-hitl">
+          <span class="nav-icon">🛡️</span>
+          <span>Human Approvals (HITL)</span>
+          <span class="nav-item-badge badge-pulse">2</span>
+        </a>
+
+        <div class="nav-section-title" style="margin-top: 6px;">Enterprise Ecosystem</div>
+        <a href="#integrations" class="nav-item" data-view="integrations" id="nav-integrations">
+          <span class="nav-icon">🔌</span>
+          <span>Business Integrations</span>
+        </a>
+        <a href="#opsmap" class="nav-item" data-view="opsmap" id="nav-opsmap">
+          <span class="nav-icon">🌐</span>
+          <span>Global Operations Map</span>
+        </a>
+        <a href="#webhook" class="nav-item" data-view="webhook" id="nav-webhook">
+          <span class="nav-icon">⚡</span>
+          <span>Cloud Event Bus</span>
+        </a>
+        <a href="#policystudio" class="nav-item" data-view="policystudio" id="nav-policystudio">
+          <span class="nav-icon">🛠️</span>
+          <span>No-Code Policy Studio</span>
+        </a>
+        <a href="#knowledge" class="nav-item" data-view="knowledge" id="nav-knowledge">
+          <span class="nav-icon">📚</span>
+          <span>Policy & RAG Store</span>
+        </a>
+        <a href="#analytics" class="nav-item" data-view="analytics" id="nav-analytics">
+          <span class="nav-icon">📊</span>
+          <span>Executive ROI Analytics</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="agent-status-card">
+          <div class="status-indicator" id="agent-status-dot"></div>
+          <div class="agent-status-info">
+            <div class="agent-status-title" id="agent-status-label">OutcomeAI: Online</div>
+            <div class="agent-status-mode">Autonomous Swarm Mode</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Top Navigation Bar -->
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <div class="page-title-group">
+            <h1 class="page-title" id="topbar-page-title">Omnichannel AI Teammate</h1>
+            <div class="page-subtitle" id="topbar-page-subtitle">Interactive live agent simulator across Webchat, WhatsApp, Email, & iPhone 16 Pro</div>
+          </div>
+        </div>
+
+        <div class="navbar-right">
+          <span id="topbar-ai-provider-badge" class="badge badge-emerald" style="font-size: 0.72rem; cursor: pointer;" onclick="window.outcomeApp.openSettings()">
+            <span class="dot-live" style="color: #10b981;"></span> Engine: Autonomous Local
+          </span>
+          <button id="btn-open-settings" class="btn btn-secondary btn-sm" title="Configure Live Real LLM API Providers (Gemini / OpenAI / Groq / Ollama)">
+            ⚙️ Live AI Settings
+          </button>
+          <button id="btn-open-pitch-mode" class="btn btn-primary btn-sm" style="background: var(--grad-primary); box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);" title="Start 3-Minute Guided Pitch & Presentation Mode">
+            🎬 Live Pitch Mode
+          </button>
+          <button id="btn-open-blueprint" class="btn btn-secondary btn-sm" style="border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.12); color: #c7d2fe;" title="View AI Teammate Architectural Blueprint">
+            🎯 Blueprint
+          </button>
+          <button id="btn-toggle-sound" class="btn btn-secondary btn-sm" title="Toggle Sound FX">
+            🔊 SFX On
+          </button>
+        </div>
+      </header>
+
+      <!-- View Containers -->
+      <div id="chat-view-container" class="view-container active"></div>
+      <div id="phone-view-container" class="view-container"></div>
+      <div id="proactive-view-container" class="view-container"></div>
+      <div id="chaos-view-container" class="view-container"></div>
+      <div id="battle-view-container" class="view-container"></div>
+      <div id="swarm-view-container" class="view-container"></div>
+      <div id="workflow-view-container" class="view-container"></div>
+      <div id="hitl-view-container" class="view-container"></div>
+      <div id="integrations-view-container" class="view-container"></div>
+      <div id="opsmap-view-container" class="view-container"></div>
+      <div id="webhook-view-container" class="view-container"></div>
+      <div id="policystudio-view-container" class="view-container"></div>
+      <div id="knowledge-view-container" class="view-container"></div>
+      <div id="analytics-view-container" class="view-container"></div>
+    </main>
+  </div>
+
+  <!-- Executive Blueprint & Challenge Architecture Modal -->
+  <div id="blueprint-modal-overlay" class="modal-overlay">
+    <div class="blueprint-modal-container">
+      <div class="blueprint-modal-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">⚡</div>
+          <div>
+            <h2 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0;">AI Teammates That Don't Just Respond — They Get the Job Done</h2>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Architectural Blueprint for Autonomous Sales & Customer Service Teammates</div>
+          </div>
+        </div>
+        <button id="btn-close-blueprint" class="btn btn-secondary btn-sm" style="padding: 6px 12px;">✕ Close</button>
+      </div>
+
+      <div class="blueprint-modal-body">
+        <!-- Core Mission Banner -->
+        <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: var(--radius-md); padding: 16px;">
+          <div style="font-weight: 700; font-size: 0.95rem; color: #f8fafc; margin-bottom: 6px;">
+            🚀 The Paradigm Shift: From Passive Chatbots to Autonomous Teammates
+          </div>
+          <div style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">
+            Traditional chatbots only answer questions with FAQ links and escalate everything else. <strong>OutcomeAI Teammates</strong> independently understand customer context, evaluate deterministic company policies, call cross-system APIs (Stripe, SAP, Salesforce, Zendesk), and only escalate to human managers when policy limits require sign-off.
+          </div>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="nav-section-title" style="padding: 0; color: #94a3b8;">The 4 Core Architectural Capabilities</div>
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🧠</div>
+            <div class="pillar-title">1. Understand Context</div>
+            <div class="pillar-desc">Instant Customer 360 graph lookup, sentiment analysis, and vectorized RAG policy database retrieval.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">⚖️</div>
+            <div class="pillar-title">2. Make Decisions</div>
+            <div class="pillar-desc">Deterministic guardrails + LangGraph multi-agent swarm consensus to verify eligibility and calculate risk.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <div class="pillar-title">3. Take Actions Across Systems</div>
+            <div class="pillar-desc">Real-time bi-directional API execution across Salesforce CRM, Stripe Billing, SAP ERP, and Twilio Voice.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <div class="pillar-title">4. Work Alongside Humans</div>
+            <div class="pillar-desc">Confidence scoring with automated routing to Human Approval Queue (HITL) for 1-click supervisor sign-off.</div>
+          </div>
+        </div>
+
+        <!-- Interactive Demo Quick Launchers -->
+        <div class="nav-section-title" style="padding: 0; color: #94a3b8;">Experience Live End-to-End Workflows Right Now</div>
+        <div class="blueprint-flow-row">
+          <div class="flow-step-box" style="border-color: rgba(16, 185, 129, 0.4); cursor: pointer;" onclick="window.outcomeApp.launchPresetScenario(0)">
+            <div class="flow-step-num" style="color: #34d399;">Workflow A · Customer Service</div>
+            <div class="flow-step-title">📦 Damaged Product Claim</div>
+            <div class="flow-step-detail">Photo verification ➔ SAP replacement dispatch ➔ Zendesk ticket solved in 0.38s.</div>
+            <button class="btn btn-success btn-sm" style="margin-top: 10px; width: 100%;">▶ Launch Demo</button>
+          </div>
+
+          <div class="flow-step-box" style="border-color: rgba(99, 102, 241, 0.4); cursor: pointer;" onclick="window.outcomeApp.launchPresetScenario(1)">
+            <div class="flow-step-num" style="color: #a5b4fc;">Workflow B · Sales Pipeline</div>
+            <div class="flow-step-title">💼 Enterprise Proposal</div>
+            <div class="flow-step-detail">BANT qualification (88/100) ➔ $72k quote generated ➔ Sarah's calendar booked.</div>
+            <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;">▶ Launch Demo</button>
+          </div>
+
+          <div class="flow-step-box" style="border-color: rgba(245, 158, 11, 0.4); cursor: pointer;" onclick="window.outcomeApp.launchPresetScenario(2)">
+            <div class="flow-step-num" style="color: #fbbf24;">Workflow C · Human-in-the-Loop</div>
+            <div class="flow-step-title">🛡️ Out-of-Policy Refund ($890)</div>
+            <div class="flow-step-detail">Confidence 58% ➔ Auto-routed to HITL Queue with recommended partial waiver.</div>
+            <button class="btn btn-secondary btn-sm" style="margin-top: 10px; width: 100%; color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">▶ Launch Demo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Live AI Model & API Settings Modal -->
+  <div id="ai-settings-modal" class="modal-overlay">
+    <div class="blueprint-modal-container" style="max-width: 680px;">
+      <div class="blueprint-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">⚙️</div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0;">Live AI Model & API Provider Settings</h3>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">Connect real Google Gemini, OpenAI, Groq, or Local Ollama keys</div>
+          </div>
+        </div>
+        <button id="btn-close-settings" class="btn btn-secondary btn-sm" style="padding: 6px 12px;">✕ Close</button>
+      </div>
+
+      <div class="blueprint-modal-body">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">Select AI Engine Provider:</label>
+            <select id="settings-provider-select" class="input-control select-control" style="margin-top: 6px; width: 100%;">
+              <option value="autonomous">⚡ Built-in Autonomous Engine (Zero Setup / 0ms Latency / Free)</option>
+              <option value="gemini">💎 Google Gemini (Gemini 1.5 Flash / Pro)</option>
+              <option value="openai">🟢 OpenAI (GPT-4o / GPT-4o-mini)</option>
+              <option value="groq">🚀 Groq (Llama-3.3 70B Ultra-Fast)</option>
+            </select>
+          </div>
+
+          <div id="settings-key-container" style="display: none;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">Enter API Key:</label>
+            <input type="password" id="settings-api-key" class="input-control" placeholder="AIzaSy... or sk-proj-..." style="margin-top: 6px; width: 100%; font-family: 'JetBrains Mono', monospace;" />
+            <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Keys are stored securely in your local browser storage only.</div>
+          </div>
+
+          <div id="settings-model-container" style="display: none;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">Target Model Name:</label>
+            <input type="text" id="settings-model-name" class="input-control" value="gemini-1.5-flash" style="margin-top: 6px; width: 100%;" />
+          </div>
+
+          <div id="settings-test-result" style="display: none; padding: 10px 14px; border-radius: 6px; font-size: 0.78rem;"></div>
+
+          <div style="display: flex; gap: 10px; margin-top: 10px;">
+            <button id="btn-test-connection" class="btn btn-secondary btn-sm" style="flex: 1; padding: 10px;">
+              🔍 Test Connection
+            </button>
+            <button id="btn-save-settings" class="btn btn-primary btn-sm" style="flex: 1.2; padding: 10px;">
+              💾 Save & Apply Provider
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data/customers.js"></script>
+  <script src="js/data/knowledge-base.js"></script>
+  <script src="js/data/scenarios.js"></script>
+  
+  <script src="js/utils/audio.js"></script>
+  <script src="js/utils/formatters.js"></script>
+  
+  <script src="js/engine/settings-manager.js"></script>
+  <script src="js/engine/voice-engine.js"></script>
+  <script src="js/engine/decision-rules.js"></script>
+  <script src="js/engine/tool-integrations.js"></script>
+  <script src="js/engine/agent-engine.js"></script>
+  
+  <script src="js/components/chat-view.js"></script>
+  <script src="js/components/phone-view.js"></script>
+  <script src="js/components/proactive-view.js"></script>
+  <script src="js/components/chaos-view.js"></script>
+  <script src="js/components/battle-view.js"></script>
+  <script src="js/components/swarm-view.js"></script>
+  <script src="js/components/workflow-view.js"></script>
+  <script src="js/components/hitl-queue.js"></script>
+  <script src="js/components/integrations-view.js"></script>
+  <script src="js/components/opsmap-view.js"></script>
+  <script src="js/components/webhook-view.js"></script>
+  <script src="js/components/policystudio-view.js"></script>
+  <script src="js/components/knowledge-view.js"></script>
+  <script src="js/components/analytics-view.js"></script>
+  <script src="js/components/pitch-modal.js"></script>
+  
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* Workflow Studio & Execution Graph */
+.workflow-viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Workflow Top Toolbar */
+.workflow-controls-bar {
+  padding: 14px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.workflow-preset-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playback-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Visual Graph Canvas Area */
+.graph-canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  padding: 30px;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Workflow Node Styles */
+.workflow-dag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+.workflow-node {
+  width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.workflow-node:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.workflow-node.status-idle {
+  opacity: 0.6;
+}
+
+.workflow-node.status-active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.workflow-node.status-completed {
+  border-color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.08);
+  opacity: 1;
+}
+
+.workflow-node.status-escalated {
+  border-color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.1);
+  opacity: 1;
+}
+
+.node-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.node-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.workflow-node.status-active .node-step-number {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.workflow-node.status-completed .node-step-number {
+  background: var(--accent-emerald);
+  color: #ffffff;
+}
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.node-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.node-connector-line {
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: -6px 0;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.node-connector-line.active {
+  background: var(--grad-primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.node-connector-line.completed {
+  background: var(--accent-emerald);
+}
+
+/* Execution Details Drawer */
+.workflow-detail-box {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideUpFade 0.25s ease-out;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+
+.detail-label {
+  min-width: 140px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  flex: 1;
+  color: var(--text-primary);
+}
