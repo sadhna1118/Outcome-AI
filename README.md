@@ -3,7 +3,6 @@
 > *"AI teammates that don't just respond; they get the job done."*
 
 ---
-
 ## 🎯 The Core Problem & Solution
 
 ### ❌ The Traditional Chatbot Trap
